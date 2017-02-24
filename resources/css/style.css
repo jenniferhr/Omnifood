@@ -7,12 +7,14 @@ GLOBAL
 	box-sizing: border-box;
 }
 
-html {
+html,
+body {
 	color: #555;
 	font-family: 'Lato', 'Arial', sans-serif;
 	font-size: 20px;
 	font-weight: 300;
 	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
 }
 
 .clearfix {zoom: 1}
@@ -122,6 +124,7 @@ a:visited {
 	text-decoration: none;
 	padding: 2px;
 	border-bottom: 1px solid #e67e22;
+	-webkit-transition: border-bottom 0.2s, color 0.2s;
 	transition: border-bottom 0.2s, color 0.2s;
 }
 
@@ -140,6 +143,7 @@ input[type=submit] {
 	font-weight: 300;
 	text-decoration: none;
 	border-radius: 200px;
+	-webkit-transition: background-color 0.2s, border 0.2s, color 0.1s;
 	transition: background-color 0.2s, border 0.2s, color 0.1s;
 }
 
@@ -195,6 +199,8 @@ header {
 	width: 1140px;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 
@@ -224,6 +230,7 @@ header {
 	border-bottom: 1px solid transparent;
 	padding-bottom: 5px;
 	transition: border-bottom 0.2s;
+	-webkit-transition: border-bottom 0.2s;
 }
 
 .main-nav li a:hover,
@@ -268,12 +275,17 @@ MEALS
 	opacity: 0.7;
 	width: 100%;
 	height: auto;
+	-webkit-transform: scale(1.15);
+	-ms-transform: scale(1.15);
 	transform: scale(1.15);
 	transition: transform 0.4s, opacity 0.4s;
+	-webkit-transition: transform 0.4s, opacity 0.4s;
 }
 
 .meal-photo img:hover {
 	opacity: 1;
+	-webkit-transform: scale(1.04);
+	-ms-transform: scale(1.04);
 	transform: scale(1.04);
 }
 
@@ -503,6 +515,7 @@ footer {
 	text-decoration: none;
 	border: 0;
 	color: #a3a3a3;
+	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
 
@@ -521,6 +534,7 @@ footer {
 .ion-social-googleplus,
 .ion-social-instagram {
 	transition: color 0.2s;
+	-webkit-transition: color 0.2s;
 }
 
 .ion-social-facebook:hover {
@@ -544,4 +558,84 @@ footer p {
 	text-align: center;
 	font-size: 90%;
 	margin-top: 20px;
+}
+
+/* ==============================
+== MEDIA QUERIES ==
+============================== */
+
+/* Big tablets to 1200px (widths smalller than the 1140px row)*/
+@media only screen and (max-width: 1200px) {
+	.hero-text-box {
+		width: 100%;
+		padding: 0 2%;
+	}
+
+	.row { padding: 0 2%; }
+}
+
+/* Small tablets to big tablets: from 768 to 1023px */
+@media only screen and (max-width: 1023px) {
+	body { font-size: 18px;}
+	section { padding: 60px 0;}
+	.long-copy {
+		line-height: 130%;
+		margin-left: 10%;
+	}
+
+	.steps-box { margin-top: 10px; }
+	.steps-box:last-child { margin-top: 10px; }
+	.works-step { margin-bottom: 40px;}
+	.works-step:last-of-type { margin-bottom: 60px;}
+
+	.app-screen { width: 50%;}
+	.icon-small {
+		width: 20px;
+		margin-right: 5px;
+	}
+	.city-feature { font-size: 90%;}
+	.plan-box {
+		width: 100%;
+		margin-left: 0%;
+	}
+	.plan-price { font-size: 250%; }
+	.contact-form { width: 80%;}
+}
+
+/* Small phones to small tablets: from 481 to 767px */
+@media only screen and (max-width: 767px) {
+	section { padding: 30px 0;}
+	.row, 
+	.hero-text-box { padding: 0 4%;	}
+	.col {
+		width: 100%;
+		margin: 0 0 4% 0;
+	}
+	.main-nav { display: none;}
+	h1 { font-size: 180%;}
+	h2 { font-size: 150%;}
+	.long-copy {
+		width: 100%;
+		margin-left: 0%;
+	}
+	.app-screen {width: 40%;}
+	.steps-box:first-child { text-align: center; }
+	.works-step div {
+		height: 40px;
+		width: 40px;
+		margin-right: 15px;
+		padding: 4px;
+		font-size: 120%;
+
+	}
+	.works-step:last-of-type { 
+		margin-bottom: 40px;
+	}
+}
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+	body { font-size: 16px;}
+	section { padding: 25px 0;}
+	.contact-form { width: 100%;}
 }

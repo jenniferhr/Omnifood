@@ -28,7 +28,7 @@ $(document).ready(function() {
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 			if (target.length) {
 				$('html, body').animate({
-			  	scrollTop: target.offset().top
+				scrollTop: target.offset().top
 			}, 1000);
 			return false;
 			}
@@ -73,6 +73,23 @@ $(document).ready(function() {
 		} else {
 			icon.addClass('ion-navicon-round');
 			icon.removeClass('ion-close-round')
+		}
+	});
+
+	/*Maps*/
+	var map = new GMaps({
+		div: '.map',
+		lat: 38.7436266,
+		lng: -9.1,
+		zoom: 12
+	});
+
+	map.addMarker({
+		lat: 38.7436266,
+		lng: -9.1602037,
+		title: 'Lisbon',
+		infoWindow: {
+			content: '<p>Our Lisbon HQ</p>'
 		}
 	});
 	

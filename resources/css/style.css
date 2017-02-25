@@ -26,6 +26,15 @@ body {
 	visibility: hidden;
 }
 
+::selection {
+	background: #e67e22; /* WebKit/Blink Browsers */
+	color: #fff;
+}
+::-moz-selection {
+	background: #e67e22; /* Gecko Browsers */
+	color: #fff;
+}
+
 /* ==============================
 REUSABLE COMPONENTS
 ============================== */
